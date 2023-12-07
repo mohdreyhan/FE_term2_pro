@@ -64,7 +64,6 @@ function amountUpdate(amount) {
   totalh4.appendChild(totalh4Text);
   totalDiv.appendChild(totalh4);
   totalDiv.appendChild(buttonDiv);
-  console.log(totalh4);
 }
 
 let buttonDiv = document.createElement("div");
@@ -90,18 +89,14 @@ let httpRequest = new XMLHttpRequest();
 let totalAmount = 0;
 httpRequest.onreadystatechange = function () {
   if (this.readyState === 4) {
-    console.log("hello");
     if (this.status == 200) {
       // console.log('call successful');
       const contentTitle = JSON.parse(this.responseText);
-      console.log("contentTitle", contentTitle);
 
       let counter = Number(document.cookie.split(",")[1].split("=")[1]);
       document.getElementById("totalItem").innerHTML = "Total Items: " + counter;
 
       let item = document.cookie.split(",")[0].split("=")[1].split(" ");
-      console.log(counter);
-      console.log(item);
 
       let i;
       let totalAmount = 0;

@@ -11,7 +11,6 @@ httpRequest.onreadystatechange = function () {
   if (httpRequest.readyState == 4 && httpRequest.status == 200) {
     // convert JSON into JavaScript object
     jsonArray = JSON.parse(httpRequest.responseText);
-    console.log(jsonArray);
     jsonArray.push({
       id: jsonArray.length + 1,
       amount: 200,

@@ -2,19 +2,14 @@
 
 let contentTitle;
 
-console.log(document.cookie);
 function dynamicClothingSection(ob) {
   let boxDiv = document.createElement("div");
   boxDiv.id = "box";
 
   let boxLink = document.createElement("a");
-  // boxLink.href = '#'
   boxLink.href = "/contentDetails.html?" + ob.id;
-  // console.log('link=>' + boxLink);
 
   let imgTag = document.createElement("img");
-  // imgTag.id = 'image1'
-  // imgTag.id = ob.photos
   imgTag.src = ob.preview;
 
   let detailsDiv = document.createElement("div");
@@ -42,15 +37,10 @@ function dynamicClothingSection(ob) {
   return boxDiv;
 }
 
-//  TO SHOW THE RENDERED CODE IN CONSOLE
-// console.log(dynamicClothingSection());
-
-// console.log(boxDiv)
 
 let mainContainer = document.getElementById("mainContainer");
 let containerClothing = document.getElementById("containerClothing");
 let containerAccessories = document.getElementById("containerAccessories");
-// mainContainer.appendChild(dynamicClothingSection('hello world!!'))
 
 // BACKEND CALLING
 
@@ -67,12 +57,10 @@ httpRequest.onreadystatechange = function() {
       }
       for (let i = 0; i < contentTitle.length; i++) {
         if (contentTitle[i].isAccessory) {
-          console.log(contentTitle[i]);
           containerAccessories.appendChild(
             dynamicClothingSection(contentTitle[i])
           );
         } else {
-          console.log(contentTitle[i]);
           containerClothing.appendChild(
             dynamicClothingSection(contentTitle[i])
           );

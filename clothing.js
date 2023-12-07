@@ -8,13 +8,9 @@ function dynamicClothingSection(ob) {
   boxDiv.id = "box";
 
   let boxLink = document.createElement("a");
-  // boxLink.href = '#'
   boxLink.href = "/contentDetails.html?" + ob.id;
-  // console.log('link=>' + boxLink);
 
   let imgTag = document.createElement("img");
-  // imgTag.id = 'image1'
-  // imgTag.id = ob.photos
   imgTag.src = ob.preview;
 
   let detailsDiv = document.createElement("div");
@@ -59,7 +55,6 @@ httpRequest.onreadystatechange = function () {
       }
       for (let i = 0; i < contentTitle.length; i++) {
         if (!contentTitle[i].isAccessory) {
-          console.log(contentTitle[i]);
           containerClothing.appendChild(dynamicClothingSection(contentTitle[i]));
         }
       }
